@@ -38,7 +38,6 @@ input[type="radio"] {
 @media screen and (max-width: 650px) {
   .slider__image-container {
     margin-bottom: 1rem;
-    height: 40vw;
   }
 }
 
