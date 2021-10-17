@@ -216,13 +216,12 @@ input[type="radio"] {
 .slider__controls {
   display: flex;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 1200px) {
   .slider__controls {
     align-self: center;
-    gap: 1rem;
   }
 }
 
@@ -242,7 +241,6 @@ label {
 
 @media screen and (max-width: 1200px) {
   label {
-    width: 3rem;
     height: 2.5rem;
   }
 }
