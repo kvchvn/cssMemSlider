@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cabin", sans-serif;
+  overflow: hidden;
+}
+
+.wrapper {
+  padding-top: 10vh;
+  width: 100vw;
+  height: 100vh;
+  background-color: cadetblue;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.slider-container {
+  margin: 0 auto;
+  width: 70vw;
+}
+
+.slider__image-container {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 30vw;
+  min-height: 25vh;
+  border-radius: 1rem;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 650px) {
+  .slider__image-container {
+    margin-bottom: 1rem;
+    height: 40vw;
+  }
+}
+
+.image {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  transition: max-width 0.5s;
+}
+
+.image-1 {
+  background: url("images/1.jpg") center center/cover no-repeat;
+}
+
+.image-2 {
+  background: url("images/2.jpg") center center/cover no-repeat;
+}
+
+.image-3 {
+  background: url("images/3.jpg") center center/cover no-repeat;
+}
+
+.image-4 {
+  background: url("images/4.jpg") center 45% / cover no-repeat;
+}
+
+.image-5 {
+  background: white url("images/5.jpg") center center/ contain no-repeat;
+}
+
+/* .image(N) {max-width: 0;} */
+
+#img-2:checked ~ .slider__image-container .image-1 {
+  max-width: 0;
+}
+
+#img-3:checked ~ .slider__image-container .image-1,
+#img-3:checked ~ .slider__image-container .image-2 {
+  max-width: 0;
+}
+
+#img-4:checked ~ .slider__image-container .image-1,
+#img-4:checked ~ .slider__image-container .image-2,
+#img-4:checked ~ .slider__image-container .image-3 {
+  max-width: 0;
+}
+
+#img-5:checked ~ .slider__image-container .image-1,
+#img-5:checked ~ .slider__image-container .image-2,
+#img-5:checked ~ .slider__image-container .image-3,
+#img-5:checked ~ .slider__image-container .image-4 {
+  max-width: 0;
+}
+
+.slider__panel {
+  display: flex;
+  justify-content: space-between;
+  height: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .slider__panel {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    gap: 3rem;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .slider__panel {
+    gap: 1rem;
+  }
+}
+
+.slider__text-content {
+  width: 80vw;
+  height: 2rem;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+  .slider__text-content {
+    height: 1rem;
+  }
+}
+
+.text-container {
+  position: relative;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  transition: left 0.5s;
+}
+
+.text {
+  width: 80vw;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+@media screen and (max-width: 1200px) {
+  .text {
+    align-self: flex-start;
+  }
+}
+
+.text p {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+@media screen and (max-width: 900px) {
+  .text p {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .text p {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .text p {
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+  }
+}
+
+#img-2:checked ~ .slider__panel .slider__text-content .text-container {
+  left: -80vw;
+}
+
+#img-3:checked ~ .slider__panel .slider__text-content .text-container {
+  left: -160vw;
+}
+
+#img-4:checked ~ .slider__panel .slider__text-content .text-container {
+  left: -240vw;
+}
+
+#img-5:checked ~ .slider__panel .slider__text-content .text-container {
+  left: -320vw;
+}
+
+#img-1:checked ~ .slider__panel .slider__text-content .text-1 {
+  opacity: 1;
+}
+
+#img-2:checked ~ .slider__panel .slider__text-content .text-2 {
+  opacity: 1;
+}
+
+#img-3:checked ~ .slider__panel .slider__text-content .text-3 {
+  opacity: 1;
+}
+
+#img-4:checked ~ .slider__panel .slider__text-content .text-4 {
+  opacity: 1;
+}
+
+#img-5:checked ~ .slider__panel .slider__text-content .text-5 {
+  opacity: 1;
+}
+
+.slider__controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .slider__controls {
+    align-self: center;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .slider__controls {
+    gap: 0;
+  }
+}
+
+label {
+  display: flex;
+  align-items: center;
+  width: 2.5rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  label {
+    width: 3rem;
+    height: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  label {
+    width: 2rem;
+  }
+}
+
+label:hover .custom-radio {
+  background-color: wheat;
+  border: 3px solid wheat;
+}
+
+label:active .custom-radio {
+  border: 3px solid wheat;
+}
+
+.custom-radio {
+  margin: 0 auto;
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  border: 3px solid black;
+  background-color: black;
+}
+
+@media screen and (max-width: 650px) {
+  .custom-radio {
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 3px solid black;
+  }
+}
+
+#img-1:checked ~ .slider__panel .slider__controls .custom-radio-1,
+#img-2:checked ~ .slider__panel .slider__controls .custom-radio-2,
+#img-3:checked ~ .slider__panel .slider__controls .custom-radio-3,
+#img-4:checked ~ .slider__panel .slider__controls .custom-radio-4,
+#img-5:checked ~ .slider__panel .slider__controls .custom-radio-5 {
+  background: transparent;
+}
